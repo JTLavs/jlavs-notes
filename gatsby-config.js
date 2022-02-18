@@ -1,23 +1,27 @@
 module.exports = {
+  pathPrefix: `/notes`,
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `JLavs Notes`,
+    description: `Just some development notes`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: 'James Lavery'
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    siteUrl: `https://notes.jlavs.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/notes`,
+        name: `notes`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "<BUCKET_NAME>",
+        bucketPrefix: "<PREFIX>"
       },
     },
     {
@@ -105,7 +109,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "JLavs Notes RSS Feed",
           },
         ],
       },
@@ -113,15 +117,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `JLavs Notes`,
+        short_name: `JLavs Notes`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

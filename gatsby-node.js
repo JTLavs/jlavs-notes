@@ -1,30 +1,39 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require("lodash")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tagTemplate = path.resolve(`./src/templates/tags.js`)
 
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
-        ) {
-          nodes {
+  const result = await graphql(`
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 2000
+      ) {
+        edges {
+          node {
             id
             fields {
               slug
             }
+            frontmatter {
+              tags
+            }
           }
         }
       }
-    `
-  )
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
+  `)
 
   if (result.errors) {
     reporter.panicOnBuild(
@@ -34,7 +43,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.postsRemark.edges;
+  const tags = result.data.tagsGroup.group;
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -42,19 +52,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      const previousPostId = index === 0 ? null : posts[index - 1].node.id
+      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].node.id
 
       createPage({
-        path: post.fields.slug,
+        path: post.node.fields.slug,
         component: blogPost,
         context: {
-          id: post.id,
+          id: post.node.id,
           previousPostId,
           nextPostId,
         },
       })
     })
+
+    if (tags.length > 0) {
+      const tags = result.data.tagsGroup.group
+      // Make tag pages
+      tags.forEach(tag => {
+        createPage({
+          path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+          component: tagTemplate,
+          context: {
+            tag: tag.fieldValue,
+          },
+        })
+      })
+    }
   }
 }
 
