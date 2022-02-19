@@ -1,6 +1,7 @@
 ---
 title: Javascript Quirks
 date: "2022-02-15"
+tags: ["javascript"]
 ---
 ```javascript
 [] + [] // equals ''

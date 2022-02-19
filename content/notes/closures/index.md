@@ -1,6 +1,7 @@
 ---
 title: Closures
 date: "2022-02-15"
+tags: ["javascript"]
 ---
 
 - A closure is a function which contains its own lexical environment.

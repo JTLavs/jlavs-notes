@@ -2,6 +2,7 @@
 title: First note
 date: "2022-02-14"
 description: "Nothing exciting here really..."
+tags: ["general"]
 ---
 
 This is my first note. 
