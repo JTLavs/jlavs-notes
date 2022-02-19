@@ -1,5 +1,9 @@
-# AWS SQS and SNS
-## AWS SQS
+---
+title: AWS - SNS
+date: "2022-02-19"
+tags: ["aws"]
+---
+
 - Used to decouple applications
 - Unlimited throughput
 - Default retention, unlimited no. of messages in queue

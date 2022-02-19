@@ -1,4 +1,8 @@
-# AWS Load Balancing
+---
+title: AWS - Load Balancing
+date: "2022-02-19"
+tags: ["aws"]
+---
 
 ### Vertical Scalability 
 - scaling size of instance

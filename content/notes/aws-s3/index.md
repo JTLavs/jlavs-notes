@@ -1,4 +1,8 @@
-# AWS S3
+---
+title: AWS - S3
+date: "2022-02-19"
+tags: ["aws"]
+---
 - Allows storage of objects (files) into buckets
 - Must have globally unique name
 - Naming convention

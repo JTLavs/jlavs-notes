@@ -1,4 +1,9 @@
-# AWS Kinesis
+---
+title: AWS - Kinesis
+date: "2022-02-19"
+tags: ["aws"]
+---
+
 - Makes it easy to collect, process and analyse streaming data in real-time
 - Kinesis Data Streams: Capture, process and store data streams
 - Kinesis Data Firehose: Load data streams into AWS data stores

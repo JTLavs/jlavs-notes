@@ -1,4 +1,8 @@
-# AWS VPCs
+---
+title: AWS - VPCs
+date: "2022-02-19"
+tags: ["aws"]
+---
 - Private network to deploy your resources
 - Subnets allow you to partition your network inside your VPC
 - Public subnets are accessible from the internet

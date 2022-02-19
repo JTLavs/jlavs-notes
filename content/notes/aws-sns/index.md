@@ -1,4 +1,8 @@
-# AWS SNS
+---
+title: AWS - SNS
+date: "2022-02-19"
+tags: ["aws"]
+---
 - Event producer that sends messages to one SNS topic
 - Event recievers listen to the SNS topic and will get all the messages
 - Up to 10,000,000 subscriptions per topic

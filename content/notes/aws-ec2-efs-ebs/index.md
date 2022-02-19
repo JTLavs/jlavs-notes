@@ -1,3 +1,8 @@
+---
+title: AWS - EC2, EBS and EFS
+date: "2022-02-19"
+tags: ["aws"]
+---
 # AWS EC2, EBS & EFS
 ### EC2 User data
 - Possible to bootstrap instances using a User Data script

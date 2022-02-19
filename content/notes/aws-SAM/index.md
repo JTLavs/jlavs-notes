@@ -1,4 +1,8 @@
-# Serverless Application Model (SAM)
+---
+title: AWS - Serverless Application Model (SAM)
+date: "2022-02-19"
+tags: ["aws"]
+---
 - Framework for developing and deploying serverless applications
 - All the config is YAML code
 - Generate complex CloudFormation from simple YAML files

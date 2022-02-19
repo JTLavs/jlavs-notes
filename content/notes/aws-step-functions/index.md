@@ -1,4 +1,9 @@
-# AWS Step Functions
+---
+title: AWS - Step Functions
+date: "2022-02-19"
+tags: ["aws"]
+---
+
 - Model your workflows as state machines (one per workflow)
     - Order fulfillment, data processing
     - Web applications, any workflow

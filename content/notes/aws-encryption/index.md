@@ -1,4 +1,8 @@
-# AWS Encryption
+---
+title: AWS - Encryption
+date: "2022-02-19"
+tags: ["aws"]
+---
 ### AWS KMS
 - Easy way to control access to data - AWS manages keys
 - Fully integrated with IAM

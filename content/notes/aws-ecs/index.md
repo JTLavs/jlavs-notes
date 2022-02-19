@@ -1,4 +1,8 @@
-# AWS ECS
+---
+title: AWS - Elastic Container Service
+date: "2022-02-19"
+tags: ["aws"]
+---
 ### ECS Clusters
 - logical groupings of EC2 instances
 - instances run the ECS agent

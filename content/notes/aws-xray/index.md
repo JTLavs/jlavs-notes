@@ -1,4 +1,9 @@
-# AWS X-Ray
+---
+title: AWS - Xray
+date: "2022-02-19"
+tags: ["aws"]
+---
+
 - Visual analysis of our applications
 - Troubleshooting performance bottlenecks
 - Understand dependancies in a microservice architecture

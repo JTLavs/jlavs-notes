@@ -1,4 +1,8 @@
-# DynamoDB
+---
+title: AWS - DynamoDB
+date: "2022-02-19"
+tags: ["aws"]
+---
 - Fully managed, highly available with replication across 3 AZs
 - NoSQL database
 - Scales to massive workloads

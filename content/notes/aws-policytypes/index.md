@@ -1,4 +1,8 @@
-# Policy Types
+---
+title: AWS - Policy types
+date: "2022-02-19"
+tags: ["aws"]
+---
 
 ### Identity-based policies
 - Attach managed and inline policies to IAM identities (users, groups to which users belong, or rules).

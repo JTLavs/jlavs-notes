@@ -1,4 +1,9 @@
-# Elasticache 
+---
+title: AWS - Elasticache
+date: "2022-02-19"
+tags: ["aws"]
+---
+
 - To get managed Redis/Memcached
 - In-memory databses with really high-performance, low latency
 - Using elasticache involves heavy application code changes
